@@ -1,10 +1,10 @@
 :root { 
-    --primary: #6366f1; 
+    /* THIS WAS THE CULPRIT. Changed from purple to the new Emerald Green */
+    --primary: #10B981; 
     --bg: #0f172a; 
     --card: #1e293b; 
     --text: #f8fafc; 
     --success: #10b981;
-    /* Fresh Cyan/Emerald Gradient for the Title */
     --accent-gradient: linear-gradient(90deg, #06B6D4 0%, #10B981 100%);
 }
 
@@ -22,7 +22,6 @@ body {
     padding-top: 5vh; 
 }
 
-/* Restored your exact container sizing and gap */
 .container { 
     background: var(--card); 
     padding: 2rem; 
@@ -36,7 +35,6 @@ body {
     margin: 0 auto; 
 }
 
-/* The new gradient text globally applied to H1 */
 h1 {
     margin: 0; 
     text-align: center; 
@@ -47,7 +45,6 @@ h1 {
     line-height: 1.4;
 }
 
-/* Styling for the QR Input field to match your old dashed upload area */
 .input-area {
     display: flex;
     flex-direction: column;
@@ -72,12 +69,13 @@ h1 {
     transition: 0.3s;
 }
 
+/* This will now glow green instead of purple when clicked */
 .input-area input:focus {
     border-color: var(--primary);
 }
 
-/* Your exact original button CSS */
 button, .download-btn { 
+    /* This will now pull the green color */
     background: var(--primary); 
     color: white; 
     border: none; 
@@ -101,6 +99,7 @@ button:disabled {
 
 button:hover:not(:disabled) { 
     filter: brightness(1.1); 
+    transform: translateY(-2px);
 }
 
 .download-btn { 
@@ -112,20 +111,20 @@ button:hover:not(:disabled) {
 }
 
 .secondary-btn {
-    background: linear-gradient(135deg, #0ea5e9, #3b82f6); 
-    border: none;
-    color: white;
+    background: transparent; 
+    border: 2px solid #06B6D4; 
+    color: #06B6D4; 
     margin-top: 0.5rem;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); 
+    box-shadow: none; 
+    transition: all 0.3s;
 }
 
 .secondary-btn:hover {
-    background: linear-gradient(135deg, #0284c7, #2563eb);
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    background: #06B6D4; 
+    color: white;
     transform: translateY(-2px); 
 }
 
-/* Layout for the generated QR Code */
 #qr-output-container {
     display: flex;
     flex-direction: column;
@@ -136,27 +135,33 @@ button:hover:not(:disabled) {
 
 #qrcode {
     background: white;
-    padding: 15px;
-    border-radius: 0.5rem;
+    padding: 25px; /* Creates a nice wide white matte around the QR */
+    border-radius: 1rem; /* Smooth rounded corners */
+    border: 4px solid var(--primary); /* The Emerald Green outer frame */
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25); /* Subtle green glow */
+    margin-bottom: 1rem;
+    display: inline-block; /* Keeps the frame tight to the QR code */
 }
 
-#qrcode img {
+
+#qrcode img, 
+#qrcode canvas {
     margin: 0 auto;
+    display: block; /* Ensures the QR code is perfectly centered inside the frame */
 }
 
-/* Your exact SEO box styling */
 .seo-box { 
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 1.5rem; 
     background: #1e293b; 
     border-radius: 0.5rem; 
+    /* The side line will now be green */
     border-left: 4px solid var(--primary); 
     color: #94a3b8; 
     font-size: 0.85rem; 
 }
 
-/* FIXED THE SYNTAX ERROR HERE */
 .seo-box h3 { 
     margin-top: 0;
     margin-bottom: 1rem;
@@ -185,7 +190,6 @@ button:hover:not(:disabled) {
     flex-shrink: 0; 
 }
 
-/* Your exact Footer Links styling */
 .footer-links {
     margin-top: 2rem;
     text-align: center;
@@ -218,13 +222,13 @@ button:hover:not(:disabled) {
     transform: scale(1.1);
 }
 
-/* About Page Specific Styles */
 .seo-box p {
     margin-bottom: 1rem;
     line-height: 1.6;
     color: #cbd5e1;
 }
 
+/* The Back button will now be properly green */
 .back-btn { 
     background: transparent; 
     border: 2px solid var(--primary); 
