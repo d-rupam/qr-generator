@@ -36,8 +36,8 @@ body {
     margin: 0 auto; 
 }
 
-/* The new gradient text, but keeping your original h1 sizing */
-.gradient-text {
+/* The new gradient text globally applied to H1 */
+h1 {
     margin: 0; 
     text-align: center; 
     font-size: 1.5rem;
@@ -156,9 +156,15 @@ button:hover:not(:disabled) {
     font-size: 0.85rem; 
 }
 
+/* FIXED THE SYNTAX ERROR HERE */
 .seo-box h3 { 
-    color: var(--text); 
-    margin-top: 0; 
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .benefit-list { 
