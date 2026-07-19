@@ -249,3 +249,43 @@ button:hover:not(:disabled) {
     color: white; 
     transform: translateY(-2px); 
 }
+
+.qr-format-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.qr-format-table th {
+    background-color: rgba(16, 185, 129, 0.1); /* Very faint emerald background */
+    color: var(--primary); /* Emerald Green text */
+    padding: 0.8rem 1rem;
+    border-bottom: 2px solid var(--primary);
+    white-space: nowrap;
+}
+
+.qr-format-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #334155; /* Slate border matching your inputs */
+    vertical-align: middle;
+}
+
+.qr-format-table tr:last-child td {
+    border-bottom: none;
+}
+
+.qr-format-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.qr-format-table code {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #06B6D4; /* Tech Cyan to make the syntax pop */
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
